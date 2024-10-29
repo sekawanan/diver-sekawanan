@@ -1,0 +1,92 @@
+# app/dependencies.py
+from typing import AsyncGenerator
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.database.session import async_session
+from app.repositories.diver_license_repository import DiverLicenseRepository
+from app.repositories.diver_profile_repository import DiverProfileRepository
+from app.repositories.master_license_repository import MasterLicenseRepository
+from app.repositories.dive_preference_repository import DivePreferenceRepository
+from app.services.diver_license_service import DiverLicenseService
+from app.services.diver_profile_service import DiverProfileService
+from app.services.master_license_service import MasterLicenseService
+from app.services.dive_preference_service import DivePreferenceService
+from app.repositories.favorite_marine_life_repository import FavoriteMarineLifeRepository
+from app.services.favorite_marine_life_service import FavoriteMarineLifeService
+from app.repositories.master_gear_repository import MasterGearRepository
+from app.services.master_gear_service import MasterGearService
+from app.services.master_color_service import MasterColorService
+from app.repositories.master_color_repository import MasterColorRepository
+from app.database.session import AsyncSession, get_db
+from fastapi import Depends
+from app.database.session import get_db  # Import the consolidated get_db
+
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+# Repository dependencies
+def get_diver_license_repository(db: AsyncSession = Depends(get_db)) -> DiverLicenseRepository:
+    return DiverLicenseRepository(db)
+
+# Repository dependencies
+def get_diver_profile_repository(db: AsyncSession = Depends(get_db)) -> DiverProfileRepository:
+    return DiverProfileRepository(db)
+
+def get_master_license_repository(db: AsyncSession = Depends(get_db)) -> MasterLicenseRepository:
+    return MasterLicenseRepository(db)
+
+# def get_master_gear_repository(db: AsyncSession = Depends(get_db)) -> MasterGearRepository:
+#     return MasterGearRepository(db)
+
+def get_dive_preference_repository(db: AsyncSession = Depends(get_db)) -> DivePreferenceRepository:
+    return DivePreferenceRepository(db)
+
+# Service dependencies
+def get_diver_license_service(
+    license_repo: DiverLicenseRepository = Depends(get_diver_license_repository),
+    profile_repo: DiverProfileRepository = Depends(get_diver_profile_repository),
+    master_license_repo: MasterLicenseRepository = Depends(get_master_license_repository)
+) -> DiverLicenseService:
+    return DiverLicenseService(
+        license_repository=license_repo,
+        profile_repository=profile_repo,
+        master_license_repository=master_license_repo
+    )
+
+def get_favorite_marine_life_service(
+    db: AsyncSession = Depends(get_db)
+) -> FavoriteMarineLifeService:
+    repository = FavoriteMarineLifeRepository(db)
+    service = FavoriteMarineLifeService(repository)
+    return service
+
+def get_master_gear_service(
+    db: AsyncSession = Depends(get_db)
+) -> MasterGearService:
+    repository = MasterGearRepository(db)
+    service = MasterGearService(repository)
+    return service
+
+def get_master_color_service(
+        db: AsyncSession = Depends(get_db)
+) -> MasterColorService:
+    repository = MasterColorRepository(db)
+    service = MasterColorService(repository)
+    return service
+
+# Service dependencies
+def get_diver_profile_service(
+    repository: DiverProfileRepository = Depends(get_diver_profile_repository)
+) -> DiverProfileService:
+    return DiverProfileService(repository)
+
+def get_master_license_service(
+    master_license_repo: MasterLicenseRepository = Depends(get_master_license_repository)
+) -> MasterLicenseService:
+    return MasterLicenseService(master_license_repository=master_license_repo)
+
+def get_dive_preference_service(
+    repository: DivePreferenceRepository = Depends(get_dive_preference_repository)
+) -> DivePreferenceService:
+    return DivePreferenceService(repository)

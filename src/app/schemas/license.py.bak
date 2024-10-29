@@ -1,0 +1,15 @@
+# app/schemas/license.py
+from pydantic import BaseModel
+
+class LicenseBase(BaseModel):
+    master_license_id: int
+    certification_number: str
+
+class LicenseCreate(LicenseBase):
+    diver_profile_id: int
+
+class License(LicenseBase):
+    id: int
+
+    class Config:
+        orm_mode = True

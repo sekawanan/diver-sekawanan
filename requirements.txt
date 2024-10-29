@@ -1,0 +1,36 @@
+# fastapi>=0.113.0,<0.114.0
+# pydantic>=2.7.0,<3.0.0
+# uvicorn[standard]==0.22.0  # ASGI server for running FastAPI apps
+# databases[aiomysql]==0.9.0  # For asynchronous MySQL support
+# sqlalchemy==2.0.20  # ORM for database models and queries
+# aiomysql==0.0.21  # MySQL driver for async interactions
+# alembic==1.8.0
+
+
+# fastapi[standard]>=0.113.0,<0.114.0
+# pydantic>=2.7.0,<3.0.0
+# pydantic-settings>=2.0.0,<3.0.0
+# # pydantic-sqlalchemy==0.0.9
+# sqlmodel>=0.0.0
+# uvicorn[standard]==0.22.0
+# sqlalchemy>=1.4,<2.0
+# annotated-types==0.7.0
+# aiomysql==0.1.0
+# alembic==1.8.0
+# pytest
+# pytest-asyncio
+# httpx
+
+
+fastapi[standard]>=0.113.0,<0.114.0
+pydantic>=2.7.0,<3.0.0
+pydantic-settings>=2.0.0,<3.0.0
+sqlmodel>=0.0.18,<0.1.0  # Ensures compatibility with SQLAlchemy 2.x
+uvicorn[standard]==0.22.0
+sqlalchemy>=2.0.0,<2.1.0  # Updated to use SQLAlchemy 2.x as required by sqlmodel
+annotated-types==0.7.0
+aiomysql==0.1.0
+alembic==1.8.0  # This version works with SQLAlchemy 2.x
+pytest
+pytest-asyncio
+httpx
