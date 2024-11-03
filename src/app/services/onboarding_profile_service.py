@@ -2,6 +2,7 @@
 
 from typing import List, Optional
 from fastapi import HTTPException
+from sqlalchemy import String
 from sqlalchemy.exc import IntegrityError
 from app.models.onboarding_profile import OnboardingProfile
 from app.schemas.onboarding_profile import (
@@ -38,6 +39,12 @@ class OnboardingProfileService:
         if profile:
             return OnboardingProfileWithRelations.from_orm(profile)
         return None
+    
+    async def get_onboarding_profile_by_user_id(self, user_id: str) -> Optional[OnboardingProfileWithRelations]:
+        profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(user_id)
+        if profile:
+            return OnboardingProfileWithRelations.from_orm(profile)
+        return None
 
     async def create_onboarding_profile(
         self, profile_create: OnboardingProfileCreate
@@ -52,13 +59,13 @@ class OnboardingProfileService:
             ) from e
 
     async def create_onboarding_profile_with_associations(
-        self, profile_data: OnboardingProfileCreateRequest
+        self, profile_data: OnboardingProfileCreateRequest, user_id: str
     ) -> OnboardingProfileWithRelations:
         try:
             # Check if a profile already exists for the given user_id
-            existing_profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(profile_data.user_id)
+            existing_profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(user_id)
             if existing_profile:
-                logger.warning(f"Attempted to create duplicate onboarding profile for user_id: {profile_data.user_id}")
+                logger.warning(f"Attempted to create duplicate onboarding profile for user_id: {user_id}")
                 raise HTTPException(
                     status_code=409,
                     detail="Onboarding profile for this user_id already exists."
@@ -85,7 +92,7 @@ class OnboardingProfileService:
                 )
 
             # Create the onboarding profile
-            onboarding_profile = await self.onboarding_profile_repository.create_onboarding_profile(profile_data)
+            onboarding_profile = await self.onboarding_profile_repository.create_onboarding_profile(profile_data, user_id=user_id)
             
             # Create profile love tos if any
             if profile_data.master_love_to_ids:
@@ -122,13 +129,13 @@ class OnboardingProfileService:
             raise HTTPException(status_code=500, detail="Internal Server Error")
 
     async def update_onboarding_profile(
-        self, profile_id: int, profile_update: OnboardingProfileUpdate
+        self, user_id: int, profile_update: OnboardingProfileUpdate
     ) -> Optional[OnboardingProfileWithRelations]:
         try:
             # Fetch existing profile
-            profile = await self.onboarding_profile_repository.get_onboarding_profile_by_id(profile_id)
+            profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(user_id)
             if not profile:
-                logger.warning(f"Onboarding profile with ID {profile_id} not found for update.")
+                logger.warning(f"Onboarding profile with ID {user_id} not found for update.")
                 raise HTTPException(
                     status_code=404,
                     detail="Onboarding profile not found."
@@ -136,7 +143,7 @@ class OnboardingProfileService:
 
             # If user_id is being updated, check for uniqueness
             if profile_update.user_id and profile_update.user_id != profile.user_id:
-                existing_profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(profile_update.user_id)
+                existing_profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(user_id)
                 if existing_profile:
                     logger.warning(f"Attempted to update onboarding profile with duplicate user_id: {profile_update.user_id}")
                     raise HTTPException(
@@ -167,9 +174,9 @@ class OnboardingProfileService:
                     )
 
             # Update profile fields
-            updated_profile = await self.onboarding_profile_repository.update_onboarding_profile(profile_id, profile_update)
+            updated_profile = await self.onboarding_profile_repository.update_onboarding_profile(profile.id, profile_update)
             if not updated_profile:
-                logger.error(f"Failed to update onboarding profile with ID: {profile_id}")
+                logger.error(f"Failed to update onboarding profile with ID: {profile.id}")
                 raise HTTPException(
                     status_code=500,
                     detail="Failed to update the onboarding profile."

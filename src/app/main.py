@@ -18,7 +18,6 @@ from app.api.v1.endpoints.dive_preference import api_router as dive_preference_r
 from app.api.v1.endpoints.dive_log import api_router as dive_log_router
 from app.api.v1.endpoints.master_dive_type import api_router as master_dive_type_router
 from app.api.v1.endpoints.favorite_marine_life import api_router as favorite_marine_life_router
-from app.api.v1.endpoints.user import api_router as user_router
 from app.api.v1.endpoints.onboarding_profile import api_router as onboarding_profile_router
 from app.api.v1.endpoints.master_love_to import api_router as master_love_to_router
 from app.api.v1.endpoints.master_previous_dive_site import api_router as master_previous_dive_site_router
@@ -120,9 +119,9 @@ app = FastAPI(
 
 # Include API routers with consistent prefixes and tags
 app.include_router(
-    user_router, 
-    prefix="/v1/users", 
-    tags=["Users"]
+    diver_profile_router, 
+    prefix="/v1", 
+    tags=["Diver Profile"]
 )
 app.include_router(
     onboarding_profile_router, 

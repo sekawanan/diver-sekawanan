@@ -17,7 +17,6 @@ from app.models.enums import (
 )
 
 class OnboardingProfileBase(BaseModel):
-    user_id: Optional[int] = Field(None, description="ID of the user")
     gender: Optional[GenderEnum] = Field(None, description="Gender of the user")
     start_diving: Optional[date] = Field(None, description="Start date of diving")
     last_time_diving: Optional[date] = Field(None, description="Last time the user dived")
@@ -37,7 +36,6 @@ class OnboardingProfileCreate(OnboardingProfileBase):
     pass  # Inherits all fields from Base
 
 class OnboardingProfileCreateRequest(BaseModel):
-    user_id: int
     gender: GenderEnum
     start_diving: date
     last_time_diving: date

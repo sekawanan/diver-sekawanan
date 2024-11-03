@@ -14,7 +14,6 @@ from app.repositories.favorite_marine_life_repository import FavoriteMarineLifeR
 from app.repositories.master_gear_repository import MasterGearRepository
 from app.repositories.master_color_repository import MasterColorRepository
 
-from app.repositories.user_repository import UserRepository
 from app.repositories.onboarding_profile_repository import OnboardingProfileRepository
 from app.repositories.master_love_to_repository import MasterLoveToRepository
 from app.repositories.master_previous_dive_site_repository import MasterPreviousDiveSiteRepository
@@ -29,7 +28,6 @@ from app.services.favorite_marine_life_service import FavoriteMarineLifeService
 from app.services.master_gear_service import MasterGearService
 from app.services.master_color_service import MasterColorService
 
-from app.services.user_service import UserService
 from app.services.onboarding_profile_service import OnboardingProfileService
 from app.services.master_love_to_service import MasterLoveToService
 from app.services.master_previous_dive_site_service import MasterPreviousDiveSiteService
@@ -76,9 +74,6 @@ def get_master_gear_repository(db: AsyncSession = Depends(get_db)) -> MasterGear
 
 def get_master_color_repository(db: AsyncSession = Depends(get_db)) -> MasterColorRepository:
     return MasterColorRepository(db)
-
-def get_user_repository(db: AsyncSession = Depends(get_db)) -> UserRepository:
-    return UserRepository(db)
 
 def get_onboarding_profile_repository(db: AsyncSession = Depends(get_db)) -> OnboardingProfileRepository:
     return OnboardingProfileRepository(db)
@@ -137,16 +132,6 @@ def get_master_color_service(
     repository: MasterColorRepository = Depends(get_master_color_repository)
 ) -> MasterColorService:
     return MasterColorService(repository)
-
-def get_user_service(
-    user_repo: UserRepository = Depends(get_user_repository),
-    jwt_manager: JWTManager = Depends(get_jwt_manager)
-) -> UserService:
-    return UserService(
-        user_repository=user_repo,
-        jwt_manager=jwt_manager
-    )
-
 # def get_onboarding_profile_service(
 #     onboarding_repo: OnboardingProfileRepository = Depends(get_onboarding_profile_repository)
 # ) -> OnboardingProfileService:

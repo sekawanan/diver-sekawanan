@@ -25,7 +25,6 @@ from .diver_info_response import DiverInfoResponse, DiverInfoData
 from .favorite_marine_life import FavoriteMarineLifeCreate, FavoriteMarineLifeCreateMultiple, FavoriteMarineLifeRead, FavoriteMarineLifeUpdate
 
 from .onboarding_profile import OnboardingProfileCreate, OnboardingProfileRead, OnboardingProfileUpdate, OnboardingProfileCreateRequest
-from .user import UserCreate, UserRead, UserUpdate
 from .master_love_to import MasterLoveToCreate, MasterLoveToRead, MasterLoveToUpdate
 from .master_previous_dive_site import MasterPreviousDiveSiteCreate, MasterPreviousDiveSiteRead
 from .profile_love_to import ProfileLoveToCreate, ProfileLoveToRead, ProfileLoveToUpdate

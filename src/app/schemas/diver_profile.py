@@ -10,7 +10,7 @@ from .dive_preference import DivePreferenceRead
 from .diver_gear import DiverGearRead
 
 class DiverProfileBase(BaseModel):
-    user_id: int
+    user_id: str
     first_name: str
     last_name: str
     full_name: str
@@ -20,7 +20,6 @@ class DiverProfileCreate(DiverProfileBase):
     """
     Schema for creating a new diver profile.
     """
-    user_id: int
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     full_name: str

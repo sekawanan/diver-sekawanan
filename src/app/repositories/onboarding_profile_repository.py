@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.orm import selectinload
 from sqlalchemy.exc import IntegrityError
+import uuid
 
 from app.models.onboarding_profile import OnboardingProfile
 from app.schemas.onboarding_profile import (
@@ -33,7 +34,7 @@ class OnboardingProfileRepository:
         )
         return result.scalars().first()
     
-    async def get_onboarding_profile_by_user_id(self, user_id: int) -> Optional[OnboardingProfile]:
+    async def get_onboarding_profile_by_user_id(self, user_id: str) -> Optional[OnboardingProfile]:
         result = await self.db.execute(
             select(OnboardingProfile)
             .options(
@@ -61,10 +62,10 @@ class OnboardingProfileRepository:
         return result.scalars().all()
 
     async def create_onboarding_profile(
-        self, profile_data: OnboardingProfileCreateRequest
+        self, profile_data: OnboardingProfileCreateRequest, user_id: str
     ) -> OnboardingProfile:
         onboarding_profile = OnboardingProfile(
-            user_id=profile_data.user_id,
+            user_id=user_id,
             gender=profile_data.gender,
             start_diving=profile_data.start_diving,
             last_time_diving=profile_data.last_time_diving,

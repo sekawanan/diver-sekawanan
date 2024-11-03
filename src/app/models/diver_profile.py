@@ -8,7 +8,7 @@ class DiverProfile(Base):
     __tablename__ = "diver_profiles"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement = True)
-    user_id = Column(Integer, nullable=False)
+    user_id = Column(String(36), index=True, nullable=True)
     first_name = Column(String(100), nullable=True)
     last_name = Column(String(100), nullable=True)
     full_name = Column(String(100), nullable=False)

@@ -16,7 +16,6 @@ from .dive_log_service import DiveLogService
 from .diver_additional_data_service import DiverAdditionalDataService
 from .favorite_marine_life_service import FavoriteMarineLifeService
 from .onboarding_profile_service import OnboardingProfileService
-from .user_service import UserService
 from .master_love_to_service import MasterLoveToService
 from .master_previous_dive_site_service import MasterPreviousDiveSiteService
 from .profile_love_to_service import ProfileLoveToService

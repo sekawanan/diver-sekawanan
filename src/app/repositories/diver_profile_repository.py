@@ -37,7 +37,7 @@ class DiverProfileRepository:
         )
         return result.scalars().all()
 
-    async def get_diver_profile(self, diver_profile_id: int) -> Optional[DiverProfile]:
+    async def get_diver_profile(self, user_id: str) -> Optional[DiverProfile]:
         result = await self.db.execute(
             select(DiverProfile)
             .options(
@@ -54,14 +54,14 @@ class DiverProfileRepository:
                     .selectinload(DiverGear.master_gears_brand)
                         .selectinload(MasterGearBrand.master_brand),
             )
-            .where(DiverProfile.id == diver_profile_id)
+            .where(DiverProfile.user_id == user_id)
         )
         return result.scalar_one_or_none()
     
-    async def get_diver_profile_by_id(self, diver_profile_id: int) -> Optional[DiverProfile]:
+    async def get_diver_profile_by_id(self, user_id: str) -> Optional[DiverProfile]:
         result = await self.db.execute(
             select(DiverProfile)
-            .where(DiverProfile.id == diver_profile_id)
+            .where(DiverProfile.user_id == user_id)
             .options(
                 selectinload(DiverProfile.diver_gears)
                     .selectinload(DiverGear.master_color),
@@ -79,8 +79,9 @@ class DiverProfileRepository:
         )
         return result.scalars().first()
 
-    async def create_diver_profile(self, diver_profile: DiverProfileCreate) -> DiverProfile:
+    async def create_diver_profile(self, user_id: str, diver_profile: DiverProfileCreate) -> DiverProfile:
         db_diver_profile = DiverProfile(**diver_profile.dict())
+        db_diver_profile.user_id = user_id
         self.db.add(db_diver_profile)
         await self.db.commit()
         await self.db.refresh(db_diver_profile)
@@ -106,8 +107,8 @@ class DiverProfileRepository:
         )
         return result.scalar_one()
 
-    async def update_diver_profile(self, diver_profile_id: int, diver_profile: DiverProfileUpdate) -> Optional[DiverProfile]:
-        db_diver_profile = await self.get_diver_profile(diver_profile_id)
+    async def update_diver_profile(self, user_id: str, diver_profile: DiverProfileUpdate) -> Optional[DiverProfile]:
+        db_diver_profile = await self.get_diver_profile(user_id)
         if not db_diver_profile:
             return None
         for var, value in vars(diver_profile).items():
@@ -118,8 +119,8 @@ class DiverProfileRepository:
         await self.db.refresh(db_diver_profile)
         return db_diver_profile
 
-    async def delete_diver_profile(self, diver_profile_id: int) -> bool:
-        db_diver_profile = await self.get_diver_profile(diver_profile_id)
+    async def delete_diver_profile(self, user_id: str) -> bool:
+        db_diver_profile = await self.get_diver_profile(user_id)
         if not db_diver_profile:
             return False
         await self.db.delete(db_diver_profile)

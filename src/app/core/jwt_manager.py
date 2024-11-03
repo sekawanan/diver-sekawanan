@@ -1,12 +1,8 @@
-# app/core/jwt_manager.py
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
-from jose import JWTError, jwt
-import jwt
-from jwt import PyJWTError
+from jose import JWTError, jwt 
 from fastapi import HTTPException, status
 
-# JWT Manager Class
 class JWTManager:
     def __init__(self, secret_key: str, algorithm: str):
         self.secret_key = secret_key
@@ -19,9 +15,9 @@ class JWTManager:
         try:
             payload = jwt.decode(token, self.secret_key, algorithms=[self.algorithm])
             return payload
-        except PyJWTError as e:
+        except JWTError as e:  # Correct: Using JWTError from 'jose'
             raise HTTPException(
-                status_code=401,
+                status_code=status.HTTP_401_UNAUTHORIZED,
                 detail=f"Could not validate credentials: {str(e)}",
                 headers={"WWW-Authenticate": "Bearer"},
             )
@@ -33,7 +29,7 @@ class JWTManager:
         token_type = payload.get("type")
         if token_type != expected_type:
             raise HTTPException(
-                status_code=401,
+                status_code=status.HTTP_401_UNAUTHORIZED,
                 detail=f"Invalid token type: expected {expected_type}, got {token_type}",
                 headers={"WWW-Authenticate": "Bearer"},
             )
@@ -45,7 +41,7 @@ class JWTManager:
         subject = payload.get("sub")
         if subject is None:
             raise HTTPException(
-                status_code=401,
+                status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Token payload missing 'sub' claim",
                 headers={"WWW-Authenticate": "Bearer"},
             )

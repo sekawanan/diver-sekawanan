@@ -16,7 +16,6 @@ from .dive_log import DiveLog
 from .diver_additional_data import DiverAdditionalData
 from .favorite_marine_life import FavoriteMarineLife
 from .onboarding_profile import OnboardingProfile
-from .user import User
 from .master_love_to import MasterLoveTo
 from .master_previous_dive_site import MasterPreviousDiveSite
 from .profile_love_to import ProfileLoveTo

@@ -17,7 +17,7 @@ from app.models import (
     DiverProfile, DiverLicense, MasterLicense, MasterDivePreference,
     DivePreference, MasterDiveSite, MasterGear, MasterBrand, MasterGearBrand, 
     DiverAdditionalData, MasterColor, MasterMarineLife, MasterDiveType, DiveLog, DiverGear, FavoriteMarineLife,
-    MasterLoveTo, MasterPreviousDiveSite, OnboardingProfile, ProfileLoveTo, ProfilePreviousDiveSite, User
+    MasterLoveTo, MasterPreviousDiveSite, OnboardingProfile, ProfileLoveTo, ProfilePreviousDiveSite
 )
 from app.database.session import Base
 from app.core.config import settings

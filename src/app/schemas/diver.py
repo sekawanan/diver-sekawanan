@@ -9,7 +9,7 @@ class DiverBase(BaseModel):
 
 class DiverWithDetails(DiverBase):
     diver_profile_id: int
-    user_id: int
+    user_id: str
     created_at: datetime
     modified_at: datetime
 

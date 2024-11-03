@@ -1,6 +1,8 @@
 # app/models/onboarding_profile.py
-from sqlalchemy import Column, Integer, Enum, Date, Boolean, Text, ForeignKey, DateTime, UniqueConstraint
+from sqlalchemy import Column, Integer, Enum, Date, Boolean, String, Text, ForeignKey, DateTime, UniqueConstraint
 from sqlalchemy.orm import relationship
+from sqlalchemy.dialects.postgresql import UUID
+import uuid
 from app.database.session import Base
 from datetime import datetime
 from .enums import (
@@ -15,12 +17,9 @@ from .enums import (
 
 class OnboardingProfile(Base):
     __tablename__ = "onboarding_profiles"
-    __table_args__ = (
-        UniqueConstraint('user_id', name='uq_onboarding_profiles_user_id'),
-    )
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, unique=True)
+    user_id = Column(String(36), index=True, nullable=True)
     gender = Column(Enum(GenderEnum), nullable=True)
     start_diving = Column(Date, nullable=True)
     last_time_diving = Column(Date, nullable=True)
@@ -36,7 +35,6 @@ class OnboardingProfile(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     modified_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    user = relationship("User", back_populates="onboarding_profiles")
     profile_love_tos = relationship(
         "ProfileLoveTo",
         back_populates="onboarding_profile",

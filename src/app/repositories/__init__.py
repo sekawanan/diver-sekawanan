@@ -16,7 +16,6 @@ from .dive_log_repository import DiveLogRepository
 from .diver_additional_data_repository import DiverAdditionalDataRepository
 from .favorite_marine_life_repository import FavoriteMarineLifeRepository
 from .onboarding_profile_repository import OnboardingProfileRepository
-from .user_repository import UserRepository
 from .master_love_to_repository import MasterLoveToRepository
 from .master_previous_dive_site_repository import MasterPreviousDiveSiteRepository
 from .profile_love_to_repository import ProfileLoveToRepository
