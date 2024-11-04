@@ -34,7 +34,7 @@ async def create_master_previous_dive_site(
     try:
         created_dive_site = await service.create_master_previous_dive_site(dive_site)
         logger.info(f"Created master previous dive site with ID: {created_dive_site.id}")
-        return create_success_response(created_dive_site)
+        return create_success_response(MasterPreviousDiveSiteRead.from_orm(created_dive_site))
     except ValueError as ve:
         logger.error(f"Error creating master previous dive site: {ve}")
         raise HTTPException(
@@ -64,7 +64,7 @@ async def read_master_previous_dive_site(
             detail="Master previous dive site not found."
         )
     logger.info(f"Retrieved master previous dive site with ID: {dive_site_id}")
-    return create_success_response(dive_site)
+    return create_success_response(MasterPreviousDiveSiteRead.from_orm(dive_site))
 
 @api_router.get(
     "/",
