@@ -7,6 +7,7 @@ from app.schemas.base import BaseResponse
 from app.schemas.master_previous_dive_site import MasterPreviousDiveSiteRead, MasterPreviousDiveSiteCreate
 from app.services.master_previous_dive_site_service import MasterPreviousDiveSiteService
 from app.dependencies import get_master_previous_dive_site_service
+from app.utils.responses import create_success_response
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +34,7 @@ async def create_master_previous_dive_site(
     try:
         created_dive_site = await service.create_master_previous_dive_site(dive_site)
         logger.info(f"Created master previous dive site with ID: {created_dive_site.id}")
-        return BaseResponse(status="success", data=created_dive_site)
+        return create_success_response(created_dive_site)
     except ValueError as ve:
         logger.error(f"Error creating master previous dive site: {ve}")
         raise HTTPException(
@@ -63,7 +64,7 @@ async def read_master_previous_dive_site(
             detail="Master previous dive site not found."
         )
     logger.info(f"Retrieved master previous dive site with ID: {dive_site_id}")
-    return BaseResponse(status="success", data=dive_site)
+    return create_success_response(dive_site)
 
 @api_router.get(
     "/",
@@ -80,7 +81,7 @@ async def read_master_previous_dive_sites(
     """
     dive_sites = await service.get_all_master_previous_dive_sites()
     logger.info(f"Retrieved {len(dive_sites)} master previous dive sites.")
-    return BaseResponse(status="success", data=dive_sites)
+    return create_success_response(dive_sites)
 
 @api_router.put(
     "/{dive_site_id}",

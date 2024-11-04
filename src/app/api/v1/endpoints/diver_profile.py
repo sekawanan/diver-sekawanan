@@ -17,6 +17,7 @@ from app.schemas import (
 from app.schemas.base import BaseResponse
 from app.services.diver_profile_service import DiverProfileService
 from app.dependencies import get_diver_profile_service
+from app.utils.responses import create_success_response
 
 api_router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -28,7 +29,7 @@ async def create_diver_profile(
 ):
     logger.info(f"Received diver_profile: {diver_profile}")
     created_profile = await service.create_diver_profile(diver_profile)
-    return BaseResponse(status="success", data=created_profile)
+    return create_success_response(created_profile)
 
 @api_router.get("/diver-profiles", response_model=BaseResponse[List[DiverProfileRead]])
 async def read_diver_profiles(service: DiverProfileService = Depends(get_diver_profile_service)):
@@ -43,7 +44,7 @@ async def read_diver_profile(
     profile = await service.get_diver_profile(user_id)
     if not profile:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Diver profile not found")
-    return BaseResponse(status="success", data=profile)
+    return create_success_response(profile)
 
 @api_router.put("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead])
 async def update_diver_profile(
@@ -54,7 +55,7 @@ async def update_diver_profile(
     updated_profile = await service.update_diver_profile(user_id, diver_profile)
     if not updated_profile:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Diver profile not found")
-    return BaseResponse(status="success", data=updated_profile)
+    return create_success_response(updated_profile)
 
 @api_router.delete("/diver-profiles/me", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_diver_profile(

@@ -7,6 +7,7 @@ from app.schemas.base import BaseResponse
 from app.schemas.master_love_to import MasterLoveToRead, MasterLoveToCreate, MasterLoveToUpdate
 from app.services.master_love_to_service import MasterLoveToService
 from app.dependencies import get_master_love_to_service
+from app.utils.responses import create_success_response
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +34,7 @@ async def create_master_love_to(
     try:
         created_master_love_to = await service.create_master_love_to(master_love_to)
         logger.info(f"Created master love to with ID: {created_master_love_to.id}")
-        return BaseResponse(status="success", data=created_master_love_to)
+        return create_success_response(created_master_love_to)
     except ValueError as ve:
         logger.error(f"Error creating master love to: {ve}")
         raise HTTPException(
@@ -63,7 +64,7 @@ async def read_master_love_to(
             detail="Master love to not found."
         )
     logger.info(f"Retrieved master love to with ID: {love_to_id}")
-    return BaseResponse(status="success", data=master_love_to)
+    return create_success_response(master_love_to)
 
 @api_router.get(
     "/",
@@ -80,7 +81,7 @@ async def read_master_love_tos(
     """
     master_love_tos = await service.get_all_master_love_tos()
     logger.info(f"Retrieved {len(master_love_tos)} master love tos.")
-    return BaseResponse(status="success", data=master_love_tos)
+    return create_success_response(master_love_tos)
 
 @api_router.put(
     "/{love_to_id}",
@@ -105,7 +106,7 @@ async def update_master_love_to(
             detail="Master love to not found."
         )
     logger.info(f"Updated master love to with ID: {love_to_id}")
-    return BaseResponse(status="success", data=updated_master_love_to)
+    return create_success_response(updated_master_love_to)
 
 @api_router.delete(
     "/{love_to_id}",

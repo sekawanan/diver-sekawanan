@@ -15,6 +15,7 @@ from app.schemas.onboarding_profile import (
 )
 from app.services.onboarding_profile_service import OnboardingProfileService
 from app.dependencies import get_onboarding_profile_service
+from app.utils.responses import create_error_response, create_success_response
 
 logger = logging.getLogger(__name__)
 
@@ -41,10 +42,10 @@ async def create_onboarding_profile(
     try:
         created_profile = await service.create_onboarding_profile_with_associations(onboarding_profile)
         logger.info(f"Created onboarding profile with ID: {created_profile.id}")
-        return BaseResponse(status="success", data=created_profile)
+        return create_success_response(create_onboarding_profile)
     except HTTPException as he:
         logger.error(f"Error creating onboarding profile: {he.detail}")
-        raise BaseResponse(status="error", data=he)
+        raise create_error_response(404, "Error creating onboarding profile")
     except Exception as e:
         logger.error(f"Unexpected error creating onboarding profile: {e}")
         raise HTTPException(
@@ -70,10 +71,10 @@ async def create_onboarding_profile(
     try:
         created_profile = await service.create_onboarding_profile_with_associations(onboarding_profile, user_id=user_id)
         logger.info(f"Created onboarding profile with ID: {created_profile.id}")
-        return BaseResponse(status="success", data=created_profile)
+        return create_success_response(created_profile)
     except HTTPException as he:
         logger.error(f"Error creating onboarding profile: {he.detail}")
-        raise BaseResponse(status="error", data=he)
+        raise create_error_response(404, "Error creating onboarding profile")
     except Exception as e:
         logger.error(f"Unexpected error creating onboarding profile: {e}")
         raise HTTPException(
@@ -103,7 +104,7 @@ async def read_onboarding_profile(
             detail="Onboarding profile not found."
         )
     logger.info(f"Retrieved onboarding profile for user_id: {user_id}")
-    return BaseResponse(status="success", data=profile)
+    return create_success_response(profile)
 
 @api_router.put(
     "/me",
@@ -124,10 +125,10 @@ async def update_onboarding_profile(
     try:
         updated_profile = await service.update_onboarding_profile(user_id, profile_update)
         logger.info(f"Updated onboarding profile with ID: {updated_profile.id}")
-        return BaseResponse(status="success", data=updated_profile)
+        return create_success_response(updated_profile)
     except HTTPException as he:
         logger.error(f"Error updating onboarding profile: {he.detail}")
-        raise BaseResponse(status="success", data=he)
+        raise create_error_response(404, "Error updating onboarding profile")
     except Exception as e:
         logger.error(f"Unexpected error updating onboarding profile: {e}")
         raise HTTPException(
