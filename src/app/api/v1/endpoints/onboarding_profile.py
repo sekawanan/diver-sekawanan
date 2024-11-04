@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Header, status
 import logging
 
 from app.api.dependencies import get_current_user_id
+from app.schemas.base import BaseResponse
 from app.schemas.onboarding_profile import (
     OnboardingProfileRead,
     OnboardingProfileCreate,
@@ -25,7 +26,7 @@ api_router = APIRouter(
 
 @api_router.post(
     "/",
-    response_model=OnboardingProfileWithRelations,  # Updated response model
+    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
     status_code=status.HTTP_201_CREATED,
     summary="Create a new onboarding profile",
     description="Adds a new onboarding profile to the system along with associated profile love tos and profile previous dive sites.",
@@ -53,7 +54,7 @@ async def create_onboarding_profile(
     
 @api_router.post(
     "/me",
-    response_model=OnboardingProfileWithRelations,
+    response_model=BaseResponse[OnboardingProfileWithRelations],
     status_code=status.HTTP_201_CREATED,
     summary="Create a new onboarding profile",
     description="Adds a new onboarding profile to the system along with associated profile love tos and profile previous dive sites.",
@@ -82,7 +83,7 @@ async def create_onboarding_profile(
 
 @api_router.get(
     "/me",
-    response_model=OnboardingProfileWithRelations,  # Updated response model
+    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
     status_code=status.HTTP_200_OK,
     summary="Retrieve an onboarding self profile",
     description="Fetches an onboarding profile by access token.",
@@ -106,7 +107,7 @@ async def read_onboarding_profile(
 
 @api_router.put(
     "/me",
-    response_model=OnboardingProfileWithRelations,  # Updated response model
+    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
     status_code=status.HTTP_200_OK,
     summary="Update an onboarding profile",
     description="Updates the details of an existing onboarding profile.",
@@ -136,7 +137,7 @@ async def update_onboarding_profile(
 
 @api_router.get(
     "/",
-    response_model=List[OnboardingProfileWithRelations],  # Updated response model
+    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
     status_code=status.HTTP_200_OK,
     summary="Retrieve all onboarding profiles",
     description="Fetches a list of all onboarding profiles.",
