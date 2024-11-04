@@ -18,6 +18,11 @@ class Settings(BaseSettings):
     DATABASE_URL: str = Field(..., env="DATABASE_URL")
     DATABASE_URL_SYNC: str = Field(..., env="DATABASE_URL_SYNC")
 
+    MYSQL_DATABASE: str
+    MYSQL_USER: str
+    MYSQL_PASSWORD: str
+    MYSQL_ROOT_PASSWORD: str
+
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ISSUER: str = "mantadive"
