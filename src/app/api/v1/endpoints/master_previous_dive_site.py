@@ -3,6 +3,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 import logging
 
+from app.schemas.base import BaseResponse
 from app.schemas.master_previous_dive_site import MasterPreviousDiveSiteRead, MasterPreviousDiveSiteCreate
 from app.services.master_previous_dive_site_service import MasterPreviousDiveSiteService
 from app.dependencies import get_master_previous_dive_site_service
@@ -17,7 +18,7 @@ api_router = APIRouter(
 
 @api_router.post(
     "/",
-    response_model=MasterPreviousDiveSiteRead,
+    response_model=BaseResponse[MasterPreviousDiveSiteRead],
     status_code=status.HTTP_201_CREATED,
     summary="Create a new master previous dive site",
     description="Adds a new master previous dive site to the system.",
@@ -42,7 +43,7 @@ async def create_master_previous_dive_site(
 
 @api_router.get(
     "/{dive_site_id}",
-    response_model=MasterPreviousDiveSiteRead,
+    response_model=BaseResponse[MasterPreviousDiveSiteRead],
     status_code=status.HTTP_200_OK,
     summary="Retrieve a master previous dive site by ID",
     description="Fetches a master previous dive site by its unique ID.",
@@ -66,7 +67,7 @@ async def read_master_previous_dive_site(
 
 @api_router.get(
     "/",
-    response_model=List[MasterPreviousDiveSiteRead],
+    response_model=BaseResponse[List[MasterPreviousDiveSiteRead]],
     status_code=status.HTTP_200_OK,
     summary="Retrieve all master previous dive sites",
     description="Fetches a list of all master previous dive sites.",
@@ -83,7 +84,7 @@ async def read_master_previous_dive_sites(
 
 @api_router.put(
     "/{dive_site_id}",
-    response_model=MasterPreviousDiveSiteRead,
+    response_model=BaseResponse[MasterPreviousDiveSiteRead],
     status_code=status.HTTP_200_OK,
     summary="Update a master previous dive site",
     description="Updates the details of an existing master previous dive site.",

@@ -14,13 +14,14 @@ from app.schemas import (
     DivePreferenceRead,
     DiverGearRead
 )
+from app.schemas.base import BaseResponse
 from app.services.diver_profile_service import DiverProfileService
 from app.dependencies import get_diver_profile_service
 
 api_router = APIRouter()
 logger = logging.getLogger(__name__)
 
-@api_router.post("/diver-profiles", response_model=DiverProfileRead, status_code=status.HTTP_201_CREATED)
+@api_router.post("/diver-profiles", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
 async def create_diver_profile(
     diver_profile: DiverProfileCreate,
     service: DiverProfileService = Depends(get_diver_profile_service)
@@ -29,12 +30,12 @@ async def create_diver_profile(
     created_profile = await service.create_diver_profile(diver_profile)
     return DiverProfileRead.from_orm(created_profile)
 
-@api_router.get("/diver-profiles", response_model=List[DiverProfileRead])
+@api_router.get("/diver-profiles", response_model=BaseResponse[List[DiverProfileRead]])
 async def read_diver_profiles(service: DiverProfileService = Depends(get_diver_profile_service)):
     profiles = await service.get_all_diver_profiles()
     return [DiverProfileRead.from_orm(profile) for profile in profiles]
 
-@api_router.get("/diver-profiles/me", response_model=DiverProfileRead)
+@api_router.get("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead])
 async def read_diver_profile(
     user_id: str = Depends(get_current_user_id),
     service: DiverProfileService = Depends(get_diver_profile_service)
@@ -44,7 +45,7 @@ async def read_diver_profile(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Diver profile not found")
     return DiverProfileRead.from_orm(profile)
 
-@api_router.put("/diver-profiles/me", response_model=DiverProfileRead)
+@api_router.put("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead])
 async def update_diver_profile(
     diver_profile: DiverProfileUpdate,
     user_id: str = Depends(get_current_user_id),
@@ -66,7 +67,7 @@ async def delete_diver_profile(
     return
 
 # New route for nested JSON response
-@api_router.get("/diver-profiles/me/info", response_model=DiverInfoResponse)
+@api_router.get("/diver-profiles/me/info", response_model=BaseResponse[DiverInfoResponse])
 async def get_diver_profile_info(
     user_id: str = Depends(get_current_user_id),
     service: DiverProfileService = Depends(get_diver_profile_service)

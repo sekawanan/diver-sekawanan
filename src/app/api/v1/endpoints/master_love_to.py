@@ -3,6 +3,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 import logging
 
+from app.schemas.base import BaseResponse
 from app.schemas.master_love_to import MasterLoveToRead, MasterLoveToCreate, MasterLoveToUpdate
 from app.services.master_love_to_service import MasterLoveToService
 from app.dependencies import get_master_love_to_service
@@ -17,7 +18,7 @@ api_router = APIRouter(
 
 @api_router.post(
     "/",
-    response_model=MasterLoveToRead,
+    response_model=BaseResponse[MasterLoveToRead],
     status_code=status.HTTP_201_CREATED,
     summary="Create a new master love to",
     description="Adds a new master love to to the system.",
@@ -42,7 +43,7 @@ async def create_master_love_to(
 
 @api_router.get(
     "/{love_to_id}",
-    response_model=MasterLoveToRead,
+    response_model=BaseResponse[MasterLoveToRead],
     status_code=status.HTTP_200_OK,
     summary="Retrieve a master love to by ID",
     description="Fetches a master love to by its unique ID.",
@@ -66,7 +67,7 @@ async def read_master_love_to(
 
 @api_router.get(
     "/",
-    response_model=List[MasterLoveToRead],
+    response_model=BaseResponse[List[MasterLoveToRead]],
     status_code=status.HTTP_200_OK,
     summary="Retrieve all master love tos",
     description="Fetches a list of all master love tos.",
@@ -83,7 +84,7 @@ async def read_master_love_tos(
 
 @api_router.put(
     "/{love_to_id}",
-    response_model=MasterLoveToRead,
+    response_model=BaseResponse[MasterLoveToRead],
     status_code=status.HTTP_200_OK,
     summary="Update a master love to",
     description="Updates the details of an existing master love to.",
