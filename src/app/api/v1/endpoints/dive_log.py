@@ -21,7 +21,7 @@ def get_dive_log_service(db: AsyncSession = Depends(get_db)) -> DiveLogService:
 @api_router.get("/dive-logs", response_model=BaseResponse[List[DiveLogRead]])
 async def read_dive_logs(service: DiveLogService = Depends(get_dive_log_service)):
     dive_logs = await service.get_all_dive_logs()
-    return dive_logs
+    return BaseResponse(status="success", data=dive_logs)
 
 
 @api_router.get("/dive-logs/{dive_log_id}", response_model=BaseResponse[DiveLogRead])
@@ -29,13 +29,13 @@ async def read_dive_log(dive_log_id: int, service: DiveLogService = Depends(get_
     dive_log = await service.get_dive_log_by_id(dive_log_id)
     if not dive_log:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Dive log not found")
-    return dive_log
+    return BaseResponse(status="success", data=dive_log)
 
 
 @api_router.post("/dive-logs", response_model=BaseResponse[DiveLogRead], status_code=status.HTTP_201_CREATED)
 async def create_dive_log(dive_log: DiveLogCreate, service: DiveLogService = Depends(get_dive_log_service)):
     created_dive_log = await service.create_dive_log(dive_log)
-    return created_dive_log
+    return BaseResponse(status="success", data=created_dive_log)
 
 
 @api_router.put("/dive-logs/{dive_log_id}", response_model=BaseResponse[DiveLogRead])
@@ -47,7 +47,7 @@ async def update_dive_log(
     updated_dive_log = await service.update_dive_log(dive_log_id, dive_log_update)
     if not updated_dive_log:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Dive log not found")
-    return updated_dive_log
+    return BaseResponse(status="success", data=updated_dive_log)
 
 
 @api_router.delete("/dive-logs/{dive_log_id}", status_code=status.HTTP_204_NO_CONTENT)
