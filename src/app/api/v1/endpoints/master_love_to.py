@@ -80,8 +80,9 @@ async def read_master_love_tos(
     Retrieve all master love tos with pagination.
     """
     master_love_tos = await service.get_all_master_love_tos()
+    master_love_tos = [MasterLoveToRead.from_orm(master_love_to) for master_love_to in master_love_tos]
     logger.info(f"Retrieved {len(master_love_tos)} master love tos.")
-    return create_success_response(MasterLoveToRead.from_orm(master_love_tos))
+    return create_success_response(master_love_tos)
 
 @api_router.put(
     "/{love_to_id}",

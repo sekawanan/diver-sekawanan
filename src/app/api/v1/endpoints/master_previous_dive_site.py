@@ -80,6 +80,7 @@ async def read_master_previous_dive_sites(
     Retrieve all master previous dive sites with pagination.
     """
     dive_sites = await service.get_all_master_previous_dive_sites()
+    dive_sites = [MasterPreviousDiveSiteRead.from_orm(dive_site) for dive_site in dive_sites]
     logger.info(f"Retrieved {len(dive_sites)} master previous dive sites.")
     return create_success_response(dive_sites)
 
