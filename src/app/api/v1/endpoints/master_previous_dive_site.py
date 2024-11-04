@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 import logging
 
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.schemas.master_previous_dive_site import MasterPreviousDiveSiteRead, MasterPreviousDiveSiteCreate
 from app.services.master_previous_dive_site_service import MasterPreviousDiveSiteService
 from app.dependencies import get_master_previous_dive_site_service

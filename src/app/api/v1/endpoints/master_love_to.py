@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 import logging
 
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.schemas.master_love_to import MasterLoveToRead, MasterLoveToCreate, MasterLoveToUpdate
 from app.services.master_love_to_service import MasterLoveToService
 from app.dependencies import get_master_love_to_service

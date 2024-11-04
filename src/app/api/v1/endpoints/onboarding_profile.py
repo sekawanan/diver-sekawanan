@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Header, status
 import logging
 
 from app.api.dependencies import get_current_user_id
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.schemas.onboarding_profile import (
     OnboardingProfileRead,
     OnboardingProfileCreate,

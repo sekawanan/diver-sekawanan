@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from typing import List
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.schemas.diver_license import DiverLicenseCreate, DiverLicenseRead, DiverLicenseUpdate
 from app.dependencies import get_diver_license_service
 from app.services.diver_license_service import DiverLicenseService  # For type hinting

@@ -14,7 +14,7 @@ from app.schemas import (
     DivePreferenceRead,
     DiverGearRead
 )
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.services.diver_profile_service import DiverProfileService
 from app.dependencies import get_diver_profile_service
 from app.utils.responses import create_success_response

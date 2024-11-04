@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.schemas.base import BaseResponse
+from app.schemas.base_response import BaseResponse
 from app.schemas.dive_log import DiveLogRead, DiveLogCreate, DiveLogUpdate
 from app.services.dive_log_service import DiveLogService
 from app.repositories.dive_log_repository import DiveLogRepository
