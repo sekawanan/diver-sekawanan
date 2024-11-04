@@ -36,3 +36,4 @@ pytest-asyncio
 httpx
 python-jose
 greenlet
+jwt
