@@ -34,8 +34,8 @@ class DiveConditionEnum(str, Enum):
 class BottomTimeEnum(str, Enum):
     UNDER_30 = 'Under 30 minutes'
     BETWEEN_31_40 = '31-40 minutes'
-    BETWEEN_41_50 = '41-50 Minutes'
-    BETWEEN_51_60 = '51-60 Minutes'
+    BETWEEN_41_50 = '41-50 minutes'
+    BETWEEN_51_60 = '51-60 minutes'
     MORE_THAN_60 = 'More than 60 minutes'
     OTHER = 'Other'
 
