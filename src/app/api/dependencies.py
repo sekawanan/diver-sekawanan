@@ -8,7 +8,7 @@ from typing import Optional
 from app.utils.jwt_handler import JWTHandler, TokenPayload
 from app.core.config import settings
 
-async def get_current_user_id(authorization: str) -> str:
+async def get_current_user_id(Authorization: str = Header(...)) -> str:
     """
     Dependency to extract and validate the current user's username from the access token.
 
@@ -18,13 +18,13 @@ async def get_current_user_id(authorization: str) -> str:
     Returns:
         str: The username extracted from the token.
     """
-    if not authorization:
+    if not Authorization:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Authorization header missing.",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    scheme, _, token = authorization.partition(" ")
+    scheme, _, token = Authorization.partition(" ")
     if scheme.lower() != "bearer" or not token:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
