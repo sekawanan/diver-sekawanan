@@ -1,7 +1,7 @@
 # app/services/diver_profile_service.py
 from typing import List, Optional
 from app.models.diver_profile import DiverProfile
-from app.schemas.diver_profile import DiverProfileCreate, DiverProfileUpdate
+from app.schemas.diver_profile import DiverProfileCreate, DiverProfileRead, DiverProfileUpdate
 from app.repositories.diver_profile_repository import DiverProfileRepository
 
 class DiverProfileService:
@@ -12,10 +12,12 @@ class DiverProfileService:
         return await self.repository.get_diver_profiles()
 
     async def get_diver_profile(self, user_id: str) -> Optional[DiverProfile]:
-        return await self.repository.get_diver_profile(user_id)
+        fetched_profile = await self.repository.get_diver_profile(user_id)
+        return DiverProfileRead.from_orm(fetched_profile)
 
     async def create_diver_profile(self, user_id: str, diver_profile: DiverProfileCreate) -> DiverProfile:
-        return await self.repository.create_diver_profile(user_id, diver_profile)
+        created_profile = await self.repository.create_diver_profile(user_id, diver_profile)
+        return DiverProfileRead.from_orm(created_profile)
 
     async def update_diver_profile(self, user_id: str, diver_profile: DiverProfileUpdate) -> Optional[DiverProfile]:
         return await self.repository.update_diver_profile(user_id, diver_profile)

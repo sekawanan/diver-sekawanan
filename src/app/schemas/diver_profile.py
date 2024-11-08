@@ -10,7 +10,6 @@ from .dive_preference import DivePreferenceRead
 from .diver_gear import DiverGearRead
 
 class DiverProfileBase(BaseModel):
-    user_id: str
     first_name: str
     last_name: str
     full_name: str
@@ -26,7 +25,8 @@ class DiverProfileCreate(DiverProfileBase):
     birth_date: date
 
     class Config:
-        from_attributes = True  # Correct for Pydantic v2
+        from_attributes = True 
+        orm_mode = True
 
 class DiverProfileCreateResponse(DiverProfileBase):
     id: int
@@ -37,7 +37,6 @@ class DiverProfileCreateResponse(DiverProfileBase):
         from_attributes = True  # Correct for Pydantic v2
 
 class DiverProfileUpdate(BaseModel):
-    user_id: Optional[int] = None
     first_name: Optional[str] = None
     last_name: Optional[str] = None
 
@@ -45,10 +44,14 @@ class DiverProfileRead(DiverProfileBase):
     id: int
     created_at: datetime
     modified_at: datetime
+    first_name: str
+    last_name: str
+    full_name: str
+    birth_date: date
     diver_gears: List[DiverGearRead] = []
     diver_licenses: List[DiverLicenseRead] = []
-    dive_preferences: List[DivePreferenceRead] = []
 
     class Config:
-        from_attributes = True  # Correct for Pydantic v2
-        populate_by_name = True  # Optional: if you have aliases
+        from_attributes = True
+        populate_by_name = True
+        orm_mode = True

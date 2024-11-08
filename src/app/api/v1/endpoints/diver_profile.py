@@ -36,6 +36,16 @@ async def read_diver_profiles(service: DiverProfileService = Depends(get_diver_p
     profiles = await service.get_all_diver_profiles()
     return BaseResponse(status="success", data=profiles)
 
+@api_router.post("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
+async def create_diver_profile(
+    diver_profile: DiverProfileCreate,
+    user_id: str = Depends(get_current_user_id),
+    service: DiverProfileService = Depends(get_diver_profile_service)
+):
+    logger.info(f"Received diver_profile: {diver_profile}")
+    created_profile = await service.create_diver_profile(user_id, diver_profile)
+    return create_success_response(created_profile)
+
 @api_router.get("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead])
 async def read_diver_profile(
     user_id: str = Depends(get_current_user_id),
