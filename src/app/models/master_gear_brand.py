@@ -13,6 +13,6 @@ class MasterGearBrand(Base):
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     modified_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
-    diver_gears = relationship("DiverGear", back_populates="master_gears_brand")
+    # diver_gears = relationship("DiverGear", back_populates="master_gears_brand")
     master_gear = relationship("MasterGear", back_populates="master_gears_brands")
-    master_brand = relationship("MasterBrand", back_populates="master_gears_brands")
+    # master_brand = relationship("MasterBrand", back_populates="master_gears_brands")

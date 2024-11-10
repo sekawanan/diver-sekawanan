@@ -9,7 +9,6 @@ from .master_brand import MasterBrand
 from .master_gear_brand import MasterGearBrand
 from .master_dive_site import MasterDiveSite
 from .master_marine_life import MasterMarineLife
-from .master_color import MasterColor
 from .dive_preference import DivePreference
 from .master_dive_type import MasterDiveType
 from .dive_log import DiveLog

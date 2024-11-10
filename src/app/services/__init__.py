@@ -8,7 +8,6 @@ from .master_dive_site_service import MasterDiveSiteService
 from app.services.master_gear_service import MasterGearService
 from app.services.master_brand_service import MasterBrandService
 from app.services.master_gear_brand_service import MasterGearBrandService
-from app.services.master_color_service import MasterColorService
 from .master_marine_life_service import MasterMarineLifeService
 from app.services.dive_preference_service import DivePreferenceService
 from .master_dive_type_service import MasterDiveTypeService

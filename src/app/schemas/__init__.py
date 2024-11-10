@@ -7,7 +7,6 @@ from .master_dive_site import MasterDiveSiteRead
 from .master_gear import MasterGearRead
 from .master_brand import MasterBrandRead
 from .master_gear_brand import MasterGearBrandRead
-from .master_color import MasterColorRead
 from .master_marine_life import MasterMarineLifeRead
 from .master_dive_type import MasterDiveTypeRead
 

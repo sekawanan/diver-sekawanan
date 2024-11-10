@@ -11,7 +11,6 @@ from app.api.v1.endpoints.master_dive_preference import api_router as master_div
 from app.api.v1.endpoints.master_gear import api_router as master_gear_router
 from app.api.v1.endpoints.master_brand import api_router as master_brand_router
 from app.api.v1.endpoints.master_gear_brand import api_router as master_gear_brand_router
-from app.api.v1.endpoints.master_color import api_router as master_color_router
 from app.api.v1.endpoints.master_dive_site import api_router as master_dive_site_router
 from app.api.v1.endpoints.master_marine_life import api_router as master_marine_life_router
 from app.api.v1.endpoints.dive_preference import api_router as dive_preference_router
@@ -127,6 +126,16 @@ app.include_router(
     onboarding_profile_router, 
     prefix="/v1", 
     tags=["Onboarding Profiles"]
+)
+app.include_router(
+    diver_gear_router, 
+    prefix="/v1", 
+    tags=["Diver Gear"]
+)
+app.include_router(
+    master_brand_router, 
+    prefix="/v1", 
+    tags=["Master Brand"]
 )
 app.include_router(
     master_love_to_router, 

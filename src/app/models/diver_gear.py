@@ -10,20 +10,14 @@ class DiverGear(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     diver_profile_id = Column(Integer, ForeignKey("diver_profiles.id"), nullable=False)
-    master_gears_brand_id = Column(Integer, ForeignKey("master_gears_brands.id"), nullable=False)
-    master_color_id = Column(Integer, ForeignKey("master_colors.id"), nullable=False)
+    master_brand_id = Column(Integer, ForeignKey("master_brands.id"), nullable=False)
+    color = Column(String(30), nullable=False)
     type = Column(String(100), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     modified_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
     diver_profile = relationship("DiverProfile", back_populates="diver_gears")
-    master_gears_brand = relationship("MasterGearBrand", back_populates="diver_gears")
-    master_color = relationship("MasterColor", back_populates="diver_gears")
-
-    # Define properties to flatten nested relationships
-    @property
-    def color_label(self) -> Optional[str]:
-        return self.master_color.color_label if self.master_color else None
+    master_brand = relationship("MasterBrand", back_populates="diver_gears")
 
     @property
     def gear_label(self) -> Optional[str]:

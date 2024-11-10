@@ -3,11 +3,12 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 
+from app.schemas.master_brand import MasterBrandRead
+
 # Base schema
 class DiverGearBase(BaseModel):
-    diver_profile_id: int
-    master_gears_brand_id: int
-    master_color_id: int
+    master_brand_id: int
+    color: str
     type: str
 
 # Create schema
@@ -16,16 +17,14 @@ class DiverGearCreate(DiverGearBase):
 
 # Update schema
 class DiverGearUpdate(BaseModel):
-    diver_profile_id: Optional[int] = None
-    master_gears_brand_id: Optional[int] = None
-    master_color_id: Optional[int] = None
+    master_brand_id: Optional[int] = None
+    color: Optional[str] = None
     type: Optional[str] = None
 
 # Read schema
 class DiverGearRead(DiverGearBase):
     id: int
-    color_label: Optional[str] = None
-    gear_label: Optional[str] = None
+    color: Optional[str] = None
     brand_label: Optional[str] = None
     created_at: datetime
     modified_at: datetime

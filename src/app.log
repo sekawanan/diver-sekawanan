@@ -422,3 +422,597 @@
 2024-11-08 15:34:12,934 - app_logger - INFO - Shutting down...
 2024-11-08 15:34:14,480 - app_logger - INFO - Starting up...
 2024-11-08 15:59:20,469 - app_logger - INFO - Shutting down...
+2024-11-08 16:05:29,888 - app_logger - INFO - Starting up...
+2024-11-09 17:43:20,109 - app_logger - INFO - Shutting down...
+2024-11-09 17:43:22,518 - app_logger - INFO - Starting up...
+2024-11-09 18:14:26,312 - app_logger - INFO - Shutting down...
+2024-11-09 18:14:27,920 - app_logger - INFO - Starting up...
+2024-11-09 18:15:38,096 - app_logger - INFO - Shutting down...
+2024-11-09 18:15:39,390 - app_logger - INFO - Starting up...
+2024-11-09 18:16:55,309 - app_logger - INFO - Shutting down...
+2024-11-09 18:16:57,639 - app_logger - INFO - Starting up...
+2024-11-09 18:27:30,150 - app_logger - INFO - Shutting down...
+2024-11-09 18:27:31,771 - app_logger - INFO - Starting up...
+2024-11-09 18:29:54,124 - app_logger - INFO - Shutting down...
+2024-11-09 18:29:55,363 - app_logger - INFO - Starting up...
+2024-11-09 18:35:16,124 - app_logger - INFO - Shutting down...
+2024-11-09 18:35:18,364 - app_logger - INFO - Starting up...
+2024-11-09 19:51:05,707 - app_logger - INFO - Shutting down...
+2024-11-09 19:51:07,467 - app_logger - INFO - Starting up...
+2024-11-09 19:54:21,266 - app_logger - INFO - Shutting down...
+2024-11-09 19:54:22,583 - app_logger - INFO - Starting up...
+2024-11-09 19:58:34,507 - app_logger - INFO - Shutting down...
+2024-11-09 19:58:36,373 - app_logger - INFO - Starting up...
+2024-11-09 19:59:48,102 - app_logger - INFO - Shutting down...
+2024-11-09 20:00:26,699 - app_logger - INFO - Starting up...
+2024-11-09 20:00:55,188 - app_logger - INFO - Shutting down...
+2024-11-09 20:00:56,424 - app_logger - INFO - Starting up...
+2024-11-09 20:01:42,792 - app_logger - INFO - Shutting down...
+2024-11-09 20:01:55,749 - app_logger - INFO - Starting up...
+2024-11-09 20:02:51,621 - app_logger - INFO - Shutting down...
+2024-11-09 20:02:53,218 - app_logger - INFO - Starting up...
+2024-11-09 20:03:06,325 - app_logger - INFO - Shutting down...
+2024-11-09 20:03:07,657 - app_logger - INFO - Starting up...
+2024-11-09 20:04:46,677 - app_logger - INFO - Shutting down...
+2024-11-09 20:05:07,892 - app_logger - INFO - Starting up...
+2024-11-09 20:05:49,316 - app_logger - INFO - Shutting down...
+2024-11-09 20:06:39,001 - app_logger - INFO - Starting up...
+2024-11-09 20:11:21,138 - app_logger - INFO - Shutting down...
+2024-11-09 20:11:22,516 - app_logger - INFO - Starting up...
+2024-11-09 20:12:28,774 - app_logger - INFO - Shutting down...
+2024-11-09 20:12:29,858 - app_logger - INFO - Starting up...
+2024-11-09 20:20:25,937 - app_logger - INFO - Shutting down...
+2024-11-09 20:25:12,598 - app_logger - INFO - Starting up...
+2024-11-09 20:26:00,537 - app_logger - INFO - Shutting down...
+2024-11-09 20:26:13,702 - app_logger - INFO - Starting up...
+2024-11-09 20:26:26,088 - app_logger - INFO - Shutting down...
+2024-11-09 20:26:27,174 - app_logger - INFO - Starting up...
+2024-11-09 20:30:31,827 - app_logger - INFO - Shutting down...
+2024-11-09 20:30:33,226 - app_logger - INFO - Starting up...
+2024-11-09 20:32:55,825 - app_logger - INFO - Shutting down...
+2024-11-09 20:32:59,512 - app_logger - INFO - Starting up...
+2024-11-09 20:33:35,149 - app_logger - INFO - Shutting down...
+2024-11-09 20:33:36,658 - app_logger - INFO - Starting up...
+2024-11-09 20:34:26,307 - app_logger - INFO - Shutting down...
+2024-11-09 20:34:27,806 - app_logger - INFO - Starting up...
+2024-11-09 20:36:48,545 - app_logger - INFO - Shutting down...
+2024-11-09 20:36:49,806 - app_logger - INFO - Starting up...
+2024-11-09 20:36:54,253 - app_logger - ERROR - IntegrityError occurred:
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/api/v1/endpoints/diver_gear.py", line 33, in create_diver_gear
+    diver_gears = await service.create_gears_by_diver(profile.id, diver_gear_create)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/services/diver_gear_service.py", line 19, in create_gears_by_diver
+    created_gear = await self.repository.create_gears_by_diver(diver_profile_id, diver_gear)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/repositories/diver_gear_repository.py", line 42, in create_gears_by_diver
+    await self.db.commit()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+[SQL: INSERT INTO diver_gears (diver_profile_id, master_gears_brand_id, color, type, created_at, modified_at) VALUES (%s, %s, %s, %s, %s, %s)]
+[parameters: (5, 2, 'red', 'string', datetime.datetime(2024, 11, 9, 13, 36, 54, 236745), datetime.datetime(2024, 11, 9, 13, 36, 54, 236748))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-11-09 20:48:19,988 - app_logger - INFO - Shutting down...
+2024-11-09 20:48:22,026 - app_logger - INFO - Starting up...
+2024-11-09 20:53:16,715 - app_logger - INFO - Shutting down...
+2024-11-09 20:53:18,051 - app_logger - INFO - Starting up...
+2024-11-09 20:57:06,128 - app_logger - INFO - Shutting down...
+2024-11-09 20:57:07,372 - app_logger - INFO - Starting up...
+2024-11-09 20:58:15,863 - app_logger - INFO - Shutting down...
+2024-11-09 20:58:17,041 - app_logger - INFO - Starting up...
+2024-11-09 20:58:45,861 - app_logger - INFO - Shutting down...
+2024-11-09 20:58:47,022 - app_logger - INFO - Starting up...
+2024-11-09 20:58:50,680 - app_logger - ERROR - IntegrityError occurred:
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/api/v1/endpoints/diver_gear.py", line 36, in create_diver_gear
+    diver_gears = await service.create_gears_by_diver(profile.id, diver_gear_create)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/services/diver_gear_service.py", line 25, in create_gears_by_diver
+    created_gear = await self.diver_gear_repository.create_gears_by_diver(diver_profile_id, diver_gear, master_brand)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/repositories/diver_gear_repository.py", line 42, in create_gears_by_diver
+    await self.db.commit()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+[SQL: INSERT INTO diver_gears (diver_profile_id, master_gears_brand_id, color, type, created_at, modified_at) VALUES (%s, %s, %s, %s, %s, %s)]
+[parameters: (5, 2, 'red', 'string', datetime.datetime(2024, 11, 9, 13, 58, 50, 671938), datetime.datetime(2024, 11, 9, 13, 58, 50, 671939))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-11-10 16:58:54,861 - app_logger - ERROR - IntegrityError occurred:
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/api/v1/endpoints/diver_gear.py", line 36, in create_diver_gear
+    diver_gears = await service.create_gears_by_diver(profile.id, diver_gear_create)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/services/diver_gear_service.py", line 25, in create_gears_by_diver
+    created_gear = await self.diver_gear_repository.create_gears_by_diver(diver_profile_id, diver_gear, master_brand)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/src/app/repositories/diver_gear_repository.py", line 42, in create_gears_by_diver
+    await self.db.commit()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/aiomysql.py", line 104, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 672, in _read_query_result
+    await result.read()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 1157, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/aiomysql/connection.py", line 641, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mikasrahwono/DEV/MantaDiveDevelopment/diver-sekawanan/venv/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`diver_sekawanan`.`diver_gears`, CONSTRAINT `diver_gears_ibfk_3` FOREIGN KEY (`master_gears_brand_id`) REFERENCES `master_gears_brands` (`id`))')
+[SQL: INSERT INTO diver_gears (diver_profile_id, master_gears_brand_id, color, type, created_at, modified_at) VALUES (%s, %s, %s, %s, %s, %s)]
+[parameters: (5, 2, 'red', 'string', datetime.datetime(2024, 11, 10, 9, 58, 54, 849130), datetime.datetime(2024, 11, 10, 9, 58, 54, 849133))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-11-10 17:01:02,979 - app_logger - INFO - Shutting down...
+2024-11-10 17:01:42,651 - app_logger - INFO - Starting up...
+2024-11-10 17:03:14,687 - app_logger - INFO - Shutting down...
+2024-11-10 17:03:21,772 - app_logger - INFO - Starting up...
+2024-11-10 17:03:22,424 - app_logger - INFO - Shutting down...
+2024-11-10 17:03:30,518 - app_logger - INFO - Starting up...
+2024-11-10 17:05:25,877 - app_logger - INFO - Shutting down...
+2024-11-10 17:05:30,178 - app_logger - INFO - Starting up...
+2024-11-10 17:07:07,097 - app_logger - INFO - Shutting down...
+2024-11-10 17:07:08,333 - app_logger - INFO - Starting up...
+2024-11-10 17:08:30,567 - app_logger - INFO - Shutting down...
+2024-11-10 17:08:43,053 - app_logger - INFO - Starting up...
+2024-11-10 17:10:52,426 - app_logger - INFO - Shutting down...
+2024-11-10 17:10:53,742 - app_logger - INFO - Starting up...
+2024-11-10 17:11:46,721 - app_logger - INFO - Shutting down...
+2024-11-10 17:11:47,926 - app_logger - INFO - Starting up...
+2024-11-10 17:14:03,841 - app_logger - INFO - Shutting down...
+2024-11-10 17:14:19,576 - app_logger - INFO - Starting up...
+2024-11-10 17:16:08,635 - app_logger - INFO - Shutting down...
+2024-11-10 17:16:19,279 - app_logger - INFO - Starting up...
+2024-11-10 17:16:58,356 - app_logger - INFO - Shutting down...
+2024-11-10 17:16:59,679 - app_logger - INFO - Starting up...
+2024-11-10 17:18:33,482 - app_logger - INFO - Shutting down...
+2024-11-10 17:18:34,594 - app_logger - INFO - Starting up...
+2024-11-10 17:19:07,409 - app_logger - INFO - Shutting down...
+2024-11-10 17:19:09,644 - app_logger - INFO - Starting up...
+2024-11-10 17:25:26,639 - app_logger - INFO - Shutting down...
+2024-11-10 17:25:28,409 - app_logger - INFO - Starting up...
+2024-11-10 17:25:46,760 - app_logger - INFO - Shutting down...
+2024-11-10 17:25:47,994 - app_logger - INFO - Starting up...
+2024-11-10 17:26:33,117 - app_logger - INFO - Shutting down...
+2024-11-10 17:26:34,233 - app_logger - INFO - Starting up...
+2024-11-10 17:26:57,442 - app_logger - INFO - Shutting down...
+2024-11-10 17:26:58,645 - app_logger - INFO - Starting up...
+2024-11-10 17:28:31,232 - app_logger - INFO - Shutting down...
+2024-11-10 17:28:35,846 - app_logger - INFO - Starting up...
+2024-11-10 17:32:19,535 - app_logger - INFO - Shutting down...
+2024-11-10 17:32:20,991 - app_logger - INFO - Starting up...
+2024-11-10 17:33:02,123 - app_logger - INFO - Shutting down...
+2024-11-10 17:33:03,228 - app_logger - INFO - Starting up...
+2024-11-10 17:33:46,515 - app_logger - INFO - Shutting down...
+2024-11-10 17:33:47,663 - app_logger - INFO - Starting up...
+2024-11-10 17:34:33,185 - app_logger - INFO - Shutting down...
+2024-11-10 17:34:34,291 - app_logger - INFO - Starting up...
+2024-11-10 17:37:00,337 - app_logger - INFO - Shutting down...
+2024-11-10 17:37:01,669 - app_logger - INFO - Starting up...
+2024-11-10 17:38:18,518 - app_logger - INFO - Shutting down...
+2024-11-10 17:38:27,255 - app_logger - INFO - Starting up...
+2024-11-10 17:39:19,403 - app_logger - INFO - Shutting down...
+2024-11-10 17:39:20,689 - app_logger - INFO - Starting up...
+2024-11-10 17:40:06,303 - app_logger - INFO - Shutting down...
+2024-11-10 17:40:07,460 - app_logger - INFO - Starting up...
+2024-11-10 17:41:31,983 - app_logger - INFO - Shutting down...
+2024-11-10 17:41:33,604 - app_logger - INFO - Starting up...
+2024-11-10 17:42:00,343 - app_logger - INFO - Shutting down...
+2024-11-10 17:42:01,513 - app_logger - INFO - Starting up...
+2024-11-10 17:44:27,484 - app_logger - INFO - Shutting down...
+2024-11-10 17:44:44,261 - app_logger - INFO - Starting up...
+2024-11-10 17:47:40,891 - app_logger - INFO - Shutting down...
+2024-11-10 17:47:42,605 - app_logger - INFO - Starting up...
+2024-11-10 17:48:37,364 - app_logger - INFO - Shutting down...
+2024-11-10 17:48:38,477 - app_logger - INFO - Starting up...
+2024-11-10 17:50:35,798 - app_logger - INFO - Shutting down...
+2024-11-10 17:50:37,502 - app_logger - INFO - Starting up...
+2024-11-10 19:22:15,860 - app_logger - INFO - Shutting down...
+2024-11-10 19:22:17,335 - app_logger - INFO - Starting up...
+2024-11-10 19:29:55,300 - app_logger - INFO - Shutting down...
+2024-11-10 19:30:53,162 - app_logger - INFO - Starting up...
+2024-11-10 19:31:20,091 - app_logger - INFO - Shutting down...
+2024-11-10 19:31:21,798 - app_logger - INFO - Starting up...
+2024-11-10 19:31:38,524 - app_logger - INFO - Shutting down...
+2024-11-10 19:31:39,777 - app_logger - INFO - Starting up...
+2024-11-10 19:31:48,627 - app_logger - INFO - Shutting down...
+2024-11-10 19:31:49,774 - app_logger - INFO - Starting up...
+2024-11-10 19:32:04,665 - app_logger - INFO - Shutting down...
+2024-11-10 19:32:06,098 - app_logger - INFO - Starting up...
+2024-11-10 19:32:17,280 - app_logger - INFO - Shutting down...
+2024-11-10 19:32:19,683 - app_logger - INFO - Starting up...
+2024-11-10 19:33:42,647 - app_logger - INFO - Shutting down...
+2024-11-10 19:33:44,004 - app_logger - INFO - Starting up...
+2024-11-10 19:36:34,110 - app_logger - INFO - Shutting down...
+2024-11-10 19:36:35,402 - app_logger - INFO - Starting up...
+2024-11-10 19:36:50,659 - app_logger - INFO - Shutting down...
+2024-11-10 19:36:51,859 - app_logger - INFO - Starting up...
+2024-11-10 19:44:22,522 - app_logger - INFO - Shutting down...

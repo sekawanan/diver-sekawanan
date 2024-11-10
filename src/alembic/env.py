@@ -16,7 +16,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'app'))
 from app.models import (
     DiverProfile, DiverLicense, MasterLicense, MasterDivePreference,
     DivePreference, MasterDiveSite, MasterGear, MasterBrand, MasterGearBrand, 
-    DiverAdditionalData, MasterColor, MasterMarineLife, MasterDiveType, DiveLog, DiverGear, FavoriteMarineLife,
+    DiverAdditionalData, MasterMarineLife, MasterDiveType, DiveLog, DiverGear, FavoriteMarineLife,
     MasterLoveTo, MasterPreviousDiveSite, OnboardingProfile, ProfileLoveTo, ProfilePreviousDiveSite
 )
 from app.database.session import Base

@@ -2,11 +2,18 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class MasterBrandRead(BaseModel):
+class MasterBrandBase(BaseModel):
+    label: str
+
+    class Config:
+        from_attributes = True
+        orm_mode = True
+
+class MasterBrandRead(MasterBrandBase):
     id: int
     label: str
     created_at: datetime
     modified_at: datetime
 
-    class Config:
-        from_attributes = True
+class MasterBrandCreate(MasterBrandBase):
+    pass

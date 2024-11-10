@@ -13,11 +13,12 @@ async def get_current_user_id(Authorization: str = Header(...)) -> str:
     Dependency to extract and validate the current user's username from the access token.
 
     Args:
-        authorization (Optional[str]): The Authorization header.
+        Authorization (Optional[str]): The Authorization header.
 
     Returns:
         str: The username extracted from the token.
     """
+    print(Authorization)
     if not Authorization:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

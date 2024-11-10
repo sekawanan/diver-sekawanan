@@ -22,20 +22,6 @@ from app.utils.responses import create_success_response
 api_router = APIRouter()
 logger = logging.getLogger(__name__)
 
-@api_router.post("/diver-profiles", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
-async def create_diver_profile(
-    diver_profile: DiverProfileCreate,
-    service: DiverProfileService = Depends(get_diver_profile_service)
-):
-    logger.info(f"Received diver_profile: {diver_profile}")
-    created_profile = await service.create_diver_profile(diver_profile)
-    return create_success_response(created_profile)
-
-@api_router.get("/diver-profiles", response_model=BaseResponse[List[DiverProfileRead]])
-async def read_diver_profiles(service: DiverProfileService = Depends(get_diver_profile_service)):
-    profiles = await service.get_all_diver_profiles()
-    return BaseResponse(status="success", data=profiles)
-
 @api_router.post("/diver-profiles/me", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
 async def create_diver_profile(
     diver_profile: DiverProfileCreate,

@@ -26,13 +26,7 @@ class DiverProfileRepository:
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_color),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_gear),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_brand),
+                    .selectinload(DiverGear.master_brand),
             )
         )
         return result.scalars().all()
@@ -46,13 +40,6 @@ class DiverProfileRepository:
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_color),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_gear),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_brand),
             )
             .where(DiverProfile.user_id == user_id)
         )
@@ -64,13 +51,7 @@ class DiverProfileRepository:
             .where(DiverProfile.user_id == user_id)
             .options(
                 selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_color),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_brand),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_gear),
+                    .selectinload(DiverGear.master_brand),
                 selectinload(DiverProfile.diver_licenses)
                     .selectinload(DiverLicense.master_license),
                 selectinload(DiverProfile.dive_preferences)
@@ -95,13 +76,7 @@ class DiverProfileRepository:
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_color),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_gear),
-                selectinload(DiverProfile.diver_gears)
-                    .selectinload(DiverGear.master_gears_brand)
-                        .selectinload(MasterGearBrand.master_brand),
+                    .selectinload(DiverGear.master_brand),
             )
             .where(DiverProfile.id == db_diver_profile.id)
         )

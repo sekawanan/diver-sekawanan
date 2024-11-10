@@ -8,7 +8,6 @@ from .master_dive_site_repository import MasterDiveSiteRepository
 from app.repositories.master_gear_repository import MasterGearRepository
 from app.repositories.master_brand_repository import MasterBrandRepository
 from app.repositories.master_gear_brand_repository import MasterGearBrandRepository
-from app.repositories.master_color_repository import MasterColorRepository
 from .master_marine_life_repository import MasterMarineLifeRepository
 from app.repositories.dive_preference_repository import DivePreferenceRepository
 from .master_dive_type_repository import MasterDiveTypeRepository

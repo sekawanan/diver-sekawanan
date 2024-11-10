@@ -25,33 +25,33 @@ api_router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-@api_router.post(
-    "/",
-    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
-    status_code=status.HTTP_201_CREATED,
-    summary="Create a new onboarding profile",
-    description="Adds a new onboarding profile to the system along with associated profile love tos and profile previous dive sites.",
-)
-async def create_onboarding_profile(
-    onboarding_profile: OnboardingProfileCreateRequest,
-    service: OnboardingProfileService = Depends(get_onboarding_profile_service)
-):
-    """
-    Create a new onboarding profile along with associated profile love tos and profile previous dive sites.
-    """
-    try:
-        created_profile = await service.create_onboarding_profile_with_associations(onboarding_profile)
-        logger.info(f"Created onboarding profile with ID: {created_profile.id}")
-        return create_success_response(create_onboarding_profile)
-    except HTTPException as he:
-        logger.error(f"Error creating onboarding profile: {he.detail}")
-        raise create_error_response(404, "Error creating onboarding profile")
-    except Exception as e:
-        logger.error(f"Unexpected error creating onboarding profile: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="An unexpected error occurred while creating the onboarding profile."
-        )
+# @api_router.post(
+#     "/",
+#     response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
+#     status_code=status.HTTP_201_CREATED,
+#     summary="Create a new onboarding profile",
+#     description="Adds a new onboarding profile to the system along with associated profile love tos and profile previous dive sites.",
+# )
+# async def create_onboarding_profile(
+#     onboarding_profile: OnboardingProfileCreateRequest,
+#     service: OnboardingProfileService = Depends(get_onboarding_profile_service)
+# ):
+#     """
+#     Create a new onboarding profile along with associated profile love tos and profile previous dive sites.
+#     """
+#     try:
+#         created_profile = await service.create_onboarding_profile_with_associations(onboarding_profile)
+#         logger.info(f"Created onboarding profile with ID: {created_profile.id}")
+#         return create_success_response(create_onboarding_profile)
+#     except HTTPException as he:
+#         logger.error(f"Error creating onboarding profile: {he.detail}")
+#         raise create_error_response(404, "Error creating onboarding profile")
+#     except Exception as e:
+#         logger.error(f"Unexpected error creating onboarding profile: {e}")
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail="An unexpected error occurred while creating the onboarding profile."
+#         )
     
 @api_router.post(
     "/me",
@@ -136,24 +136,24 @@ async def update_onboarding_profile(
             detail="An unexpected error occurred while updating the onboarding profile."
         )
 
-@api_router.get(
-    "/",
-    response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
-    status_code=status.HTTP_200_OK,
-    summary="Retrieve all onboarding profiles",
-    description="Fetches a list of all onboarding profiles.",
-)
-async def read_onboarding_profiles(
-    skip: int = 0,
-    limit: int = 100,
-    service: OnboardingProfileService = Depends(get_onboarding_profile_service)
-):
-    """
-    Retrieve all onboarding profiles with pagination.
-    """
-    profiles = await service.get_all_onboarding_profiles(skip=skip, limit=limit)
-    logger.info(f"Retrieved {len(profiles)} onboarding profiles.")
-    return BaseResponse(status="success", data=profiles)
+# @api_router.get(
+#     "/",
+#     response_model=BaseResponse[OnboardingProfileWithRelations],  # Updated response model
+#     status_code=status.HTTP_200_OK,
+#     summary="Retrieve all onboarding profiles",
+#     description="Fetches a list of all onboarding profiles.",
+# )
+# async def read_onboarding_profiles(
+#     skip: int = 0,
+#     limit: int = 100,
+#     service: OnboardingProfileService = Depends(get_onboarding_profile_service)
+# ):
+#     """
+#     Retrieve all onboarding profiles with pagination.
+#     """
+#     profiles = await service.get_all_onboarding_profiles(skip=skip, limit=limit)
+#     logger.info(f"Retrieved {len(profiles)} onboarding profiles.")
+#     return BaseResponse(status="success", data=profiles)
 
 # @api_router.get(
 #     "/{profile_id}",
