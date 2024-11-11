@@ -1,7 +1,9 @@
 # app/main.py
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.exceptions import generic_exception_handler, http_exception_handler, validation_exception_handler
 from app.core.jwt_manager import JWTManager
 from app.api.v1.endpoints.diver_profile import api_router as diver_profile_router
 from app.api.v1.endpoints.diver_license import api_router as diver_license_router
@@ -168,41 +170,6 @@ async def health_check():
     logger.info("Health check endpoint called.")
     return {"status": "healthy"}
 
-# Global exception handler for DuplicateFavoriteMarineLifeError
-@app.exception_handler(DuplicateFavoriteMarineLifeError)
-async def duplicate_favorite_marine_life_exception_handler(request: Request, exc: DuplicateFavoriteMarineLifeError):
-    return JSONResponse(
-        status_code=409,
-        content={"detail": exc.message},
-    )
-
-# Global exception handler for DuplicateDivePreferenceError
-@app.exception_handler(DuplicateDivePreferenceError)
-async def duplicate_dive_preference_exception_handler(request: Request, exc: DuplicateDivePreferenceError):
-    return JSONResponse(
-        status_code=409,
-        content={"detail": exc.message},
-    )
-
-@app.exception_handler(IntegrityError)
-async def integrity_error_exception_handler(request: Request, exc: IntegrityError):
-    logger.exception("IntegrityError occurred:")
-    error_msg = str(exc).lower()
-    if "foreign key constraint" in error_msg:
-        detail = "One or more foreign key constraints failed."
-    elif "unique constraint" in error_msg:
-        detail = "Duplicate entry detected."
-    else:
-        detail = "Database integrity error."
-    return JSONResponse(
-        status_code=400,
-        content={"detail": detail},
-    )
-
-@app.exception_handler(Exception)
-async def general_exception_handler(request: Request, exc: Exception):
-    logger.exception("Unhandled exception occurred:")
-    return JSONResponse(
-        status_code=500,
-        content={"detail": "An unexpected error occurred."},
-    )
+app.add_exception_handler(HTTPException, http_exception_handler)
+app.add_exception_handler(Exception, generic_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)

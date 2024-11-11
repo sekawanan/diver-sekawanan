@@ -12,7 +12,7 @@ class ErrorDetail(BaseModel):
 class BaseResponse(Generic[T], BaseModel):
     payload: Optional[T] = None
     errors: Optional[Union[ErrorDetail, list[ErrorDetail]]] = None
-    timeStamp: datetime
+    timeStamp: str
     success: bool
 
     @classmethod
@@ -20,7 +20,7 @@ class BaseResponse(Generic[T], BaseModel):
         return cls(
             payload=payload,
             errors=None,
-            timeStamp=datetime.utcnow(),
+            timeStamp=datetime.utcnow().isoformat(),
             success=True
         )
 
@@ -29,6 +29,6 @@ class BaseResponse(Generic[T], BaseModel):
         return cls(
             payload=None,
             errors=errors,
-            timeStamp=datetime.utcnow(),
+            timeStamp=datetime.utcnow().isoformat(),
             success=False
         )
