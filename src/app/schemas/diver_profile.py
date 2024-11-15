@@ -39,6 +39,10 @@ class DiverProfileCreateResponse(DiverProfileBase):
 class DiverProfileUpdate(BaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
+    full_name: Optional[str] = None
+
+class DiverProfileUpdateProfilePicture(BaseModel):
+    profile_picture_url: Optional[str] = None
 
 class DiverProfileRead(DiverProfileBase):
     id: int
@@ -48,6 +52,7 @@ class DiverProfileRead(DiverProfileBase):
     last_name: str
     full_name: str
     birth_date: date
+    profile_picture_url: str
     diver_gears: List[DiverGearRead] = []
     diver_licenses: List[DiverLicenseRead] = []
 

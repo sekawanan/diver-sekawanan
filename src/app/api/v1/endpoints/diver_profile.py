@@ -15,6 +15,7 @@ from app.schemas import (
     DiverGearRead
 )
 from app.schemas.base_response import BaseResponse
+from app.schemas.diver_profile import DiverProfileUpdateProfilePicture
 from app.services.diver_profile_service import DiverProfileService
 from app.dependencies import get_diver_profile_service
 from app.utils.responses import create_success_response
@@ -52,6 +53,16 @@ async def update_diver_profile(
     if not updated_profile:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Diver profile not found")
     return create_success_response(updated_profile)
+
+@api_router.post("/diver-profiles/me/add-profile-picture", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
+async def create_diver_profile(
+    diver_profile: DiverProfileUpdateProfilePicture,
+    user_id: str = Depends(get_current_user_id),
+    service: DiverProfileService = Depends(get_diver_profile_service)
+):
+    logger.info(f"Received diver_profile: {diver_profile}")
+    created_profile = await service.add_diver_profile_picture(user_id, diver_profile)
+    return create_success_response(created_profile)
 
 @api_router.delete("/diver-profiles/me", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_diver_profile(

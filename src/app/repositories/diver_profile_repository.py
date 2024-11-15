@@ -5,7 +5,7 @@ from typing import List, Optional
 from sqlalchemy.orm import selectinload
 
 from app.models.diver_profile import DiverProfile
-from app.schemas.diver_profile import DiverProfileCreate, DiverProfileUpdate
+from app.schemas.diver_profile import DiverProfileCreate, DiverProfileUpdate, DiverProfileUpdateProfilePicture
 from app.models.dive_preference import DivePreference
 from app.models.diver_license import DiverLicense
 from app.models.master_gear import MasterGear
@@ -83,6 +83,18 @@ class DiverProfileRepository:
         return result.scalar_one()
 
     async def update_diver_profile(self, user_id: str, diver_profile: DiverProfileUpdate) -> Optional[DiverProfile]:
+        db_diver_profile = await self.get_diver_profile(user_id)
+        if not db_diver_profile:
+            return None
+        for var, value in vars(diver_profile).items():
+            if value is not None:
+                setattr(db_diver_profile, var, value)
+        self.db.add(db_diver_profile)
+        await self.db.commit()
+        await self.db.refresh(db_diver_profile)
+        return db_diver_profile
+    
+    async def update_diver_profile_picture(self, user_id: str, diver_profile: DiverProfileUpdateProfilePicture) -> Optional[DiverProfile]:
         db_diver_profile = await self.get_diver_profile(user_id)
         if not db_diver_profile:
             return None
