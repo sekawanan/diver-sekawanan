@@ -1,5 +1,5 @@
 # app/models/diver_profile.py
-from sqlalchemy import Column, Integer, String, DateTime, Date
+from sqlalchemy import Column, Integer, String, DateTime, Date, Text
 from app.database.session import Base
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -12,7 +12,7 @@ class DiverProfile(Base):
     first_name = Column(String(100), nullable=True)
     last_name = Column(String(100), nullable=True)
     full_name = Column(String(100), nullable=False)
-    profile_picture_url = Column(String(), nullable=True)
+    profile_picture_url = Column(Text, nullable=True)
     birth_date = Column(Date, default=datetime(1970, 1, 1), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     modified_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
