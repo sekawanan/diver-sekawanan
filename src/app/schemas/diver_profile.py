@@ -52,7 +52,7 @@ class DiverProfileRead(DiverProfileBase):
     last_name: str
     full_name: str
     birth_date: date
-    profile_picture_url: str
+    profile_picture_url: Optional[str] = None
     diver_gears: List[DiverGearRead] = []
     diver_licenses: List[DiverLicenseRead] = []
 
