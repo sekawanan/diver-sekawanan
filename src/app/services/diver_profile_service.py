@@ -23,7 +23,7 @@ class DiverProfileService:
         return await self.repository.update_diver_profile(user_id, diver_profile)
     
     async def add_diver_profile_picture(self, user_id: str, diver_profile: DiverProfileUpdateProfilePicture) -> Optional[DiverProfile]:
-        return await self.repository.update_diver_profile(user_id, diver_profile)
+        return await self.repository.update_diver_profile_picture(user_id, diver_profile)
 
     async def delete_diver_profile(self, user_id: str) -> bool:
         return await self.repository.delete_diver_profile(user_id)

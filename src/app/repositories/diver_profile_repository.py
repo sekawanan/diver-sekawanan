@@ -92,7 +92,8 @@ class DiverProfileRepository:
         self.db.add(db_diver_profile)
         await self.db.commit()
         await self.db.refresh(db_diver_profile)
-        return db_diver_profile
+        profile = self.get_diver_profile_by_id()
+        return profile
     
     async def update_diver_profile_picture(self, user_id: str, diver_profile: DiverProfileUpdateProfilePicture) -> Optional[DiverProfile]:
         db_diver_profile = await self.get_diver_profile(user_id)

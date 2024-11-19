@@ -55,14 +55,14 @@ async def update_diver_profile(
     return create_success_response(updated_profile)
 
 @api_router.post("/diver-profiles/me/add-profile-picture", response_model=BaseResponse[DiverProfileRead], status_code=status.HTTP_201_CREATED)
-async def create_diver_profile(
+async def add_profile_picture(
     diver_profile: DiverProfileUpdateProfilePicture,
     user_id: str = Depends(get_current_user_id),
     service: DiverProfileService = Depends(get_diver_profile_service)
 ):
     logger.info(f"Received diver_profile: {diver_profile}")
-    created_profile = await service.add_diver_profile_picture(user_id, diver_profile)
-    return create_success_response(created_profile)
+    profile = await service.add_diver_profile_picture(user_id, diver_profile)
+    return create_success_response(profile)
 
 @api_router.delete("/diver-profiles/me", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_diver_profile(
