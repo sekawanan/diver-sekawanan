@@ -141,16 +141,6 @@ class OnboardingProfileService:
                     detail="Onboarding profile not found."
                 )
 
-            # If user_id is being updated, check for uniqueness
-            if profile_update.user_id and profile_update.user_id != profile.user_id:
-                existing_profile = await self.onboarding_profile_repository.get_onboarding_profile_by_user_id(user_id)
-                if existing_profile:
-                    logger.warning(f"Attempted to update onboarding profile with duplicate user_id: {profile_update.user_id}")
-                    raise HTTPException(
-                        status_code=409,
-                        detail="Another onboarding profile with this user_id already exists."
-                    )
-
             # Validate Master Love To IDs if provided
             if profile_update.master_love_to_ids is not None:
                 valid_love_to_ids = await self.master_love_to_repository.get_valid_ids(profile_update.master_love_to_ids)
