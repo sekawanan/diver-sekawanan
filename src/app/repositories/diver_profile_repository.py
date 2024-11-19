@@ -21,8 +21,7 @@ class DiverProfileRepository:
         result = await self.db.execute(
             select(DiverProfile)
             .options(
-                selectinload(DiverProfile.diver_licenses)
-                    .selectinload(DiverLicense.master_license),
+                selectinload(DiverProfile.diver_licenses),
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)
@@ -35,8 +34,7 @@ class DiverProfileRepository:
         result = await self.db.execute(
             select(DiverProfile)
             .options(
-                selectinload(DiverProfile.diver_licenses)
-                    .selectinload(DiverLicense.master_license),
+                selectinload(DiverProfile.diver_licenses),
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)
@@ -52,8 +50,7 @@ class DiverProfileRepository:
             .options(
                 selectinload(DiverProfile.diver_gears)
                     .selectinload(DiverGear.master_brand),
-                selectinload(DiverProfile.diver_licenses)
-                    .selectinload(DiverLicense.master_license),
+                selectinload(DiverProfile.diver_licenses),
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
             )
@@ -71,8 +68,7 @@ class DiverProfileRepository:
         result = await self.db.execute(
             select(DiverProfile)
             .options(
-                selectinload(DiverProfile.diver_licenses)
-                    .selectinload(DiverLicense.master_license),
+                selectinload(DiverProfile.diver_licenses),
                 selectinload(DiverProfile.dive_preferences)
                     .selectinload(DivePreference.master_preference),
                 selectinload(DiverProfile.diver_gears)

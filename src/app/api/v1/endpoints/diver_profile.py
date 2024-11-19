@@ -10,7 +10,6 @@ from app.schemas import (
     DiverProfileUpdate,
     DiverInfoResponse,
     DiverInfoData,
-    DiverLicenseRead,
     DivePreferenceRead,
     DiverGearRead
 )
@@ -87,7 +86,6 @@ async def get_diver_profile_info(
     # Construct DiverInfoData using from_orm for nested relationships
     data = DiverInfoData(
         profile=DiverProfileRead.from_orm(profile),
-        licenses=[DiverLicenseRead.from_orm(license) for license in profile.diver_licenses],
         dive_preferences=[DivePreferenceRead.from_orm(pref) for pref in profile.dive_preferences],
         diver_gears=[DiverGearRead.from_orm(gear) for gear in profile.diver_gears]
     )

@@ -135,6 +135,11 @@ app.include_router(
     tags=["Diver Gear"]
 )
 app.include_router(
+    diver_license_router, 
+    prefix="/v1", 
+    tags=["Diver License"]
+)
+app.include_router(
     master_brand_router, 
     prefix="/v1", 
     tags=["Master Brand"]

@@ -5,7 +5,6 @@ from typing import List, Optional
 from datetime import datetime, date
 
 # Import necessary schemas
-from .diver_license import DiverLicenseRead
 from .dive_preference import DivePreferenceRead
 from .diver_gear import DiverGearRead
 
@@ -54,7 +53,6 @@ class DiverProfileRead(DiverProfileBase):
     birth_date: date
     profile_picture_url: Optional[str] = ""
     diver_gears: List[DiverGearRead] = []
-    diver_licenses: List[DiverLicenseRead] = []
 
     class Config:
         from_attributes = True

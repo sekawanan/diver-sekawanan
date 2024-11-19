@@ -5,19 +5,36 @@ from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from app.models import DiverLicense  # Ensure this is your SQLAlchemy model
-from app.schemas.diver_license import DiverLicenseCreate, DiverLicenseUpdate
+from app.models.dive_preference import DivePreference
+from app.models.diver_profile import DiverProfile
+from app.schemas.diver_license import DiverLicenseCreate
 
 class DiverLicenseRepository:
     def __init__(self, db: AsyncSession):
         self.db = db
 
+    async def get_diver_profile(self, user_id: str) -> Optional[DiverProfile]:
+        result = await self.db.execute(
+            select(DiverProfile)
+            .options(
+                selectinload(DiverProfile.diver_licenses),
+                selectinload(DiverProfile.dive_preferences)
+                    .selectinload(DivePreference.master_preference),
+                selectinload(DiverProfile.diver_gears)
+            )
+            .where(DiverProfile.user_id == user_id)
+        )
+        return result.scalar_one_or_none()
+
     async def create_license(self, diver_profile_id: int, license_data: DiverLicenseCreate) -> DiverLicense:
         new_license = DiverLicense(
             diver_profile_id=diver_profile_id,
-            master_license_id=license_data.master_license_id,
-            certification_number=license_data.certification_number,
-            certificate_date=license_data.certificate_date,
+            license_institution=license_data.license_institution,
+            license_level=license_data.license_level,
+            diver_name=license_data.diver_name,
+            diver_number=license_data.diver_number,
             birth_date_license=license_data.birth_date_license,
+            certificate_date=license_data.certificate_date,
             instructor_name=license_data.instructor_name,
             instructor_number=license_data.instructor_number,
             store_name=license_data.store_name,
@@ -26,58 +43,17 @@ class DiverLicenseRepository:
         self.db.add(new_license)
         await self.db.commit()
         await self.db.refresh(new_license)
-        return new_license
 
-    async def get_all_licenses(self) -> List[DiverLicense]:
-        result = await self.db.execute(
-            select(DiverLicense).options(selectinload(DiverLicense.master_license))
-        )
-        licenses = result.scalars().all()
-        return licenses
-
-    async def get_license_by_id(self, license_id: int) -> Optional[DiverLicense]:
-        result = await self.db.execute(
-            select(DiverLicense).options(selectinload(DiverLicense.master_license)).where(DiverLicense.id == license_id)
-        )
-        license = result.scalar_one_or_none()
-        return license
-
-    async def get_licenses_by_profile_id(self, diver_profile_id: int) -> List[DiverLicense]:
-        result = await self.db.execute(
-            select(DiverLicense).options(selectinload(DiverLicense.master_license)).where(DiverLicense.diver_profile_id == diver_profile_id)
-        )
-        licenses = result.scalars().all()
-        return licenses
-
-    async def get_latest_license_by_profile_id(self, diver_profile_id: int) -> Optional[DiverLicense]:
         result = await self.db.execute(
             select(DiverLicense)
-            .options(selectinload(DiverLicense.master_license))
             .where(DiverLicense.diver_profile_id == diver_profile_id)
-            .order_by(DiverLicense.certificate_date.desc())
-            .limit(1)
         )
-        latest_license = result.scalar_one_or_none()
-        return latest_license
+        return result.scalar_one_or_none()
 
-    async def update_license(self, license_id: int, license_update: DiverLicenseUpdate) -> Optional[DiverLicense]:
-        license = await self.get_license_by_id(license_id)
-        if not license:
-            return None
-
-        for var, value in vars(license_update).items():
-            if value is not None:
-                setattr(license, var, value)
-
-        self.db.add(license)
-        await self.db.commit()
-        await self.db.refresh(license)
-        return license
-
-    async def delete_license(self, license_id: int) -> bool:
-        license = await self.get_license_by_id(license_id)
-        if not license:
-            return False
-        await self.db.delete(license)
-        await self.db.commit()
-        return True
+    async def get_all_licenses_by_diver_profile_id(self, diver_profile_id: int) -> List[DiverLicense]:
+        result = await self.db.execute(
+            select(DiverLicense)
+            .where(DiverLicense.diver_profile_id == diver_profile_id)
+        )
+        licenses = result.scalars().all()
+        return licenses

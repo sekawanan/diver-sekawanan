@@ -11,7 +11,7 @@ from .master_marine_life import MasterMarineLifeRead
 from .master_dive_type import MasterDiveTypeRead
 
 # 2. Import Dependent Schemas Next
-from .diver_license import DiverLicenseCreate, DiverLicenseRead, DiverLicenseUpdate
+from .diver_license import DiverLicenseCreate
 from .dive_preference import DivePreferenceCreate, DivePreferenceRead, DivePreferenceUpdate
 from .diver_gear import DiverGearCreate, DiverGearRead, DiverGearUpdate
 

@@ -6,13 +6,11 @@ from datetime import datetime
 
 # Import necessary schemas
 from .diver_profile import DiverProfileRead
-from .diver_license import DiverLicenseRead
 from .dive_preference import DivePreferenceRead
 from .diver_gear import DiverGearRead
 
 class DiverInfoData(BaseModel):
     profile: DiverProfileRead
-    diver_licenses: List[DiverLicenseRead] = []
     dive_preferences: List[DivePreferenceRead] = []
     diver_gears: List[DiverGearRead] = []
 
