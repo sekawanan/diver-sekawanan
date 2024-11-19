@@ -58,12 +58,24 @@ class OnboardingProfileCreateRequest(BaseModel):
     )
 
 class OnboardingProfileUpdate(OnboardingProfileBase):
-    master_love_to_ids: Optional[List[int]] = Field(
-        None,
+    gender: GenderEnum
+    start_diving: date
+    last_time_diving: date
+    current_logs: int
+    last_certification: CertificationEnum
+    certification_issuer: CertificationIssuerEnum
+    want_to_see: WantToSeeEnum
+    dive_current_condition: DiveConditionEnum
+    bottom_time: BottomTimeEnum
+    trouble_equalizing: TroubleEqualizingEnum
+    photographer: bool
+    information: Optional[str] = None
+    master_love_to_ids: List[int] = Field(
+        default_factory=list,
         description="List of Master Love To IDs to associate"
     )
-    master_previous_dive_site_ids: Optional[List[int]] = Field(
-        None,
+    master_previous_dive_site_ids: List[int] = Field(
+        default_factory=list,
         description="List of Master Previous Dive Site IDs to associate"
     )
 
