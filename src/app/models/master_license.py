@@ -14,6 +14,3 @@ class MasterLicense(Base):
     alias = Column(String(50), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     modified_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
-
-# Define the relationship
-    diver_licenses = relationship("DiverLicense", back_populates="master_license")
