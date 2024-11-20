@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, date
 
+from app.schemas.diver_license import DiverLicenseBase
+
 # Import necessary schemas
 from .dive_preference import DivePreferenceRead
 from .diver_gear import DiverGearRead
@@ -53,6 +55,7 @@ class DiverProfileRead(DiverProfileBase):
     birth_date: date
     profile_picture_url: Optional[str] = ""
     diver_gears: List[DiverGearRead] = []
+    diver_licenses: List[DiverLicenseBase] = []
 
     class Config:
         from_attributes = True
