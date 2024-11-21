@@ -41,6 +41,7 @@ class DiverProfileUpdate(BaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     full_name: Optional[str] = None
+    birth_date: Optional[date] = None
 
 class DiverProfileUpdateProfilePicture(BaseModel):
     profile_picture_url: Optional[str] = None

@@ -20,7 +20,9 @@ class DiverProfileService:
         return DiverProfileRead.from_orm(created_profile)
 
     async def update_diver_profile(self, user_id: str, diver_profile: DiverProfileUpdate) -> Optional[DiverProfile]:
-        return await self.repository.update_diver_profile(user_id, diver_profile)
+        await self.repository.update_diver_profile(user_id, diver_profile)
+        fetched_profile = await self.repository.get_diver_profile(user_id)
+        return DiverProfileRead.from_orm(fetched_profile)
     
     async def add_diver_profile_picture(self, user_id: str, diver_profile: DiverProfileUpdateProfilePicture) -> Optional[DiverProfile]:
         await self.repository.update_diver_profile_picture(user_id, diver_profile)
